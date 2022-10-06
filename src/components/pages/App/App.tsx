@@ -1,3 +1,5 @@
+import appStyle from './app.module.css';
+
 export function App() {
-  return <h1>test morozov</h1>;
+  return <div className={appStyle.app}></div>;
 }
