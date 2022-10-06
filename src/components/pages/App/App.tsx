@@ -18,11 +18,10 @@ export function App() {
               Back
             </button>
           )}
-          {!isLastStep && (
-            <button type="button" onClick={next}>
-              Next
-            </button>
-          )}
+
+          <button type="button" onClick={next}>
+            {isLastStep ? 'Finish' : 'Next'}
+          </button>
         </div>
       </form>
     </div>
