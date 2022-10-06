@@ -2,17 +2,27 @@ import { useMultistepForm } from '@/hooks/useMultistepForm';
 import appStyle from './app.module.css';
 
 export function App() {
-  const { steps, currentStepIndex } = useMultistepForm([
-    <div>One</div>,
-    <div>Two</div>,
-    <div>three</div>,
-  ]);
+  const { steps, currentStepIndex, step, isFirstStep, back, next, isLastStep } =
+    useMultistepForm([<div>One</div>, <div>Two</div>, <div>three</div>]);
 
   return (
     <div className={appStyle.app}>
       <form>
         <div className={appStyle.formCounter}>
           {currentStepIndex + 1}/{steps.length}
+        </div>
+        {step}
+        <div className={appStyle.buttonsContainer}>
+          {!isFirstStep && (
+            <button type="button" onClick={back}>
+              Back
+            </button>
+          )}
+          {!isLastStep && (
+            <button type="button" onClick={next}>
+              Next
+            </button>
+          )}
         </div>
       </form>
     </div>

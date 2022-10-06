@@ -13,3 +13,10 @@
     top: .5rem;
     right: .5rem
 }
+
+.buttonsContainer{
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+}
